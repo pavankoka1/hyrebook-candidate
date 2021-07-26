@@ -1,12 +1,10 @@
-import { combineReducers } from "redux";
-import lang from "../Lang/LangReducer";
-import loader from "../Loader/LoaderReducer";
-import snackbar from "../Snackbar/SnackbarReducer";
-import Feature1 from "../Feature1/FeatureReducer";
+import { combineReducers } from 'redux'
+import { reducer as auth } from 'store/auth'
+import { reducer as profile } from 'store/profile'
+import loader from '../Loader/LoaderReducer'
 
 export default combineReducers({
-  lang,
-  loader,
-  snackbar,
-  Feature1
-});
+	auth,
+	profile,
+	loader,
+})

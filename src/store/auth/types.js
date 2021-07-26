@@ -1,0 +1,19 @@
+const SEND_OTP = 'SEND_OTP'
+const SEND_OTP_SUCCESS = 'SEND_OTP_SUCCESS'
+const SEND_OTP_FAILURE = 'SEND_OTP_FAILURE'
+const VERIFY_OTP = 'VERIFY_OTP'
+const VERIFY_OTP_SUCCESS = 'VERIFY_OTP_SUCCESS'
+const VERIFY_OTP_FAILURE = 'SEND_OTP_FAILURE'
+
+export {
+	SEND_OTP,
+	SEND_OTP_SUCCESS,
+	SEND_OTP_FAILURE,
+	VERIFY_OTP,
+	VERIFY_OTP_SUCCESS,
+	VERIFY_OTP_FAILURE,
+}
+
+// import { buildActionTypes } from 'store/buildActionTypes'
+
+// export default buildActionTypes(['SEND_OTP', 'VERIFY_OTP'])
