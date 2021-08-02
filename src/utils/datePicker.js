@@ -3,13 +3,21 @@ import moment from 'moment'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 
-function DatePicker({ placeholder, className, value, onChange }) {
+function DatePicker({
+	hideContent = false,
+	placeholder,
+	className,
+	value,
+	onChange,
+	view = 'month',
+}) {
 	const datePickerRef = useRef(null)
 	const [showDatePicker, setShowDatePicker] = useState(false)
 
 	function handleOutsideClick(e) {
 		if (
 			datePickerRef &&
+			datePickerRef.current &&
 			showDatePicker &&
 			!datePickerRef.current.contains(e.target)
 		) {
@@ -28,12 +36,14 @@ function DatePicker({ placeholder, className, value, onChange }) {
 		<div className={`p-relative ${className}`}>
 			<p className="mont-16 fw-400 mb-5">{placeholder}</p>
 			<div className="d-flex alingn-items-center">
-				<p
-					className={`bg-f2f2f2 h-48 w-150 neu-24 py-10 px-15 mr-24`}
-					style={{ borderRadius: '5px' }}
-				>
-					{moment(value).format('L')}
-				</p>
+				{value && !hideContent && (
+					<p
+						className={`bg-f2f2f2 h-48 w-150 neu-24 py-10 px-15 mr-24`}
+						style={{ borderRadius: '5px' }}
+					>
+						{moment(value).format('L')}
+					</p>
+				)}
 				<img
 					className="has-cursor"
 					src={require('assets/icons/calendar.svg')}
@@ -57,7 +67,11 @@ function DatePicker({ placeholder, className, value, onChange }) {
 						onChange={(value) => {
 							onChange(value)
 						}}
+						onClickYear={(value) => {
+							onChange(value)
+						}}
 						value={value}
+						view={view}
 					/>
 				</div>
 			)}

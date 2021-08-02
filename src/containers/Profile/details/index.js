@@ -4,6 +4,8 @@ import UploadResume from './components/uploadResume'
 import PersonalDetails from './components/personalDetails'
 import EmploymentDetails from './components/employmentDetails'
 import PastWorkExperience from './components/pastWorkExperience'
+import EducationalDetails from './components/educationalDetails'
+import AdditionalDetails from './components/additionalDetails'
 
 function Index({ step }) {
 	function renderStep() {
@@ -16,6 +18,10 @@ function Index({ step }) {
 				return <EmploymentDetails />
 			case 4:
 				return <PastWorkExperience />
+			case 5:
+				return <EducationalDetails />
+			case 6:
+				return <AdditionalDetails />
 			default:
 				return null
 		}

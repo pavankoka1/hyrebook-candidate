@@ -33,10 +33,10 @@ function Router({ loading, step }) {
 	)
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (store) => {
 	return {
-		loading: state.profile.loading,
-		step: state.profile.step,
+		loading: store.profile.loading,
+		step: store.profile.step,
 	}
 }
 

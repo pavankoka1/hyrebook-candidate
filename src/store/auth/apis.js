@@ -3,7 +3,7 @@ const handlerEnabled = false
 
 // Replace endpoint and change api name
 const sendOtp = async (payload) => {
-	return await axiosInstance.post('/api/auth/sendotp/', payload, {
+	return await axiosInstance.post('/api/auth/candidate/sendotp/', payload, {
 		handlerEnabled,
 	})
 }

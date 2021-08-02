@@ -22,11 +22,12 @@ export function* verifyOtpSaga({ payload }) {
 
 		const token = get(response, 'data.token', '')
 		const user = get(response, 'data.user', '')
-		const isRegistered = get(response, 'data.isRegistered', false)
+		// const isRegistered = get(response, 'data.isRegistered', false)
 		localStorage.setItem('token', `Token ${token}`)
 		localStorage.setItem('user', user)
 
-		history.push(isRegistered ? '/search' : '/sign-up')
+		history.push('/profile')
+		// history.push(isRegistered ? '/search' : '/sign-up')
 
 		yield put(ACTIONS.verifyOtpSuccess(response.data))
 	} catch (error) {

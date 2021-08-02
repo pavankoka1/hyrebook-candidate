@@ -8,7 +8,7 @@ export const steps = {
 const INITIAL_STATE = {
 	loading: false,
 	error: '',
-	step: 4,
+	step: 1,
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -27,6 +27,11 @@ export default (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				loading: false,
+			}
+		case types.GO_BACK:
+			return {
+				...state,
+				step: state.step - 1,
 			}
 		default:
 			return state

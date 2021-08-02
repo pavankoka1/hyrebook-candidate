@@ -55,7 +55,7 @@ function Input(props) {
 	}, [])
 
 	function handleClick(e) {
-		if (wrapperRef && e.target) {
+		if (wrapperRef && wrapperRef.current && e.target) {
 			const isClickedInside = wrapperRef.current.contains(e.target)
 
 			setIsFocus(isClickedInside)

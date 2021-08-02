@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
+import store from 'store'
+import Button from 'utils/button'
 import Input from 'utils/input'
 import Dropdown from 'utils/dropdown'
 import DatePicker from 'utils/datePicker'
+
+import { goBack } from 'store/profile/actions'
 
 const differentlyAbledOptions = [
 	{
@@ -99,6 +103,10 @@ function PersonalDetails() {
 		maritalStatus: maritalStatusOptions[0].value,
 		onBreak: onBreakOptions[0].value,
 	})
+
+	function handleClick() {
+		store.dispatch(goBack())
+	}
 
 	return (
 		<div className="pt-40">
@@ -205,6 +213,18 @@ function PersonalDetails() {
 						onChange={(val) => setState({ ...state, onBreak: val })}
 					/>
 				</div>
+			</div>
+			<div className="d-flex ml-auto w-fit mt-50">
+				<Button
+					label="BACK"
+					className="w-120 h-48 mr-30"
+					onClick={handleClick}
+				/>
+				<Button
+					disabled
+					label="NEXT"
+					className="w-120 h-48 bg-f89c1c t-black b-0"
+				/>
 			</div>
 		</div>
 	)

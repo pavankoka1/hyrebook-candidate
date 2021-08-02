@@ -36,7 +36,6 @@ export default (state = INITIAL_STATE, action) => {
 				loading: true,
 			}
 		case types.VERIFY_OTP_SUCCESS:
-			debugger
 			return {
 				...state,
 				loading: false,

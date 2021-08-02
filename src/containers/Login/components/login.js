@@ -24,7 +24,7 @@ function Login({ loading, redirect, step }) {
 	}
 
 	function handleLoginClick() {
-		store.dispatch(sendOtp({ username: phone, userType: 'recruiter' }))
+		store.dispatch(sendOtp({ username: phone, userType: 1 }))
 	}
 
 	function handleOtpClick() {

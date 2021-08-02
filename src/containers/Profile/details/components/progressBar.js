@@ -49,7 +49,7 @@ function ProgressBar({ step }) {
 		setTimeout(() => {
 			setWidth(75 + 234 * (step - 1))
 		}, 0)
-	}, [])
+	}, [step])
 
 	return (
 		<div className="h-76 p-relative">
